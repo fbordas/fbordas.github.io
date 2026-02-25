@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Fernando Bordas D&iacute;az</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #000000;
+            min-height: 100vh;
+            display: block;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            color: white;
+        }
+
+        .container {
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            padding: 40px;
+            width: fit-content;
+            border: 3px solid #9c9c9c;
+            color: #000000;
+            margin-top: 2rem!important;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        h1 {
+            margin: 0px;
+            font-size: 5em;
+        }
+
+        h2 {
+            font-size: 4em;
+        }
+
+        h3 {
+            font-size: 3em;
+        }
+
+        h4 {
+            font-size: 1.5em;
+        }
+
+        td, input {
+            text-align: center;
+            align-content: center;
+        }
+        td, th {
+            padding: 5px;
+        }
+
+        button {
+            width: 100%;
+        }
+
+        .languageselector {
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            width: fit-content;
+            border: 3px solid #9c9c9c;
+            color: #000000;
+            padding: 5px;
+            text-align: center;
+            position: fixed;
+            top: 0.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 999;
+        }
+
+        .cvlanguage {
+            display: none;
+        }
+
+        .cvlanguage.active {
+            display: block;
+        }
+
+        .section {
+            display: flex;
+        }
+
+        .sectionheader {
+            text-transform: uppercase;
+            font-weight: bold;
+            width: 20%;
+            float: left;
+        }
+
+        .sectiondata {
+            width: 80%;
+        }
+
+        li {
+            margin-left: 30px;
+        }
+
+        .job {
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 0;
+        }
+
+        .job-header {
+            width: 100%;
+            background: none;
+            border: none;
+            padding: 0.75rem 0;
+            font-size: 1.1rem;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .job-header:focus {
+            outline: none;
+        }
+
+        .job-body {
+            height: 0;
+            overflow: hidden;
+            transition: height 300ms ease;
+        }
+
+        .job-content {
+            padding: 0.5rem 0;
+        }
+
+        .chevron {
+            transition: transform 300ms ease;
+        }
+
+        .job.open .chevron {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="languageselector">
+        <a href="#">Espa&ntilde;ol</a> |
+        <a href="#">English</a>
+    </div>
+    <div class="container">
+        <h1>Fernando R. Bordas D&iacute;az</h1><br><hr><br>
+        <div class="cvlanguage active">
+            <h3>Personal &amp; Contact Information</h3><br>
+            <section class="section">
+                <div class="sectionheader">Birth Date:</div>
+                <div class="sectiondata">September 18th, 1984</div>
+            </section>
+            <section class="section">
+                <div class="sectionheader">National ID:</div>
+                <div class="sectiondata">001-1703063-5</div>
+            </section>
+            <section class="section">
+                <div class="sectionheader">Phone:</div>
+                <div class="sectiondata">809.968.3995</div>
+            </section>
+            <section class="section">
+                <div class="sectionheader">Email:</div>
+                <div class="sectiondata">fbordas@gmail.com</div>
+            </section>
+            <section class="section">
+                <div class="sectionheader">Current Address:</div>
+                <div class="sectiondata">Mar&iacute;a Montessori 5, Res. Alba, Las Praderas</div>
+            </section>
+            <br><hr><br>
+            <section class="section sectionheader"><h4>Professional Summary</h4></section>
+            <section class="section">
+                <div class="sectiondata">
+                    Software engineering professional with 11+ years of experience in software development and quality assurance
+                    with particular focus on backend code engineering as well as functional and exploratory testing across web,
+                    desktop, and API platforms. Adept at breaking down complex systems, identifying edge cases, and collaborating
+                    closely with development and QA teams. Strong academic and professional background in software development
+                    with active GitHub projects, seeking to transition into a hybrid QA/Dev role or a fully dedicated development role.
+                </div>
+            </section>
+            <br><hr><br>
+            <section class="section sectionheader"><h4>Github Profiles:</h4></section>
+            <section class="section">
+                <div class="sectiondata">
+                    <a href="https://www.github.com/fbordas">https://www.github.com/fbordas</a> (Personal + professional projects)
+                    <br><br><a href="https://www.github.com/tohnocoding">https://www.github.com/tohnocoding</a> (Hobbyist projects)
+                </div>
+            </section>
+            <br><hr><br>
+            <section class="section sectionheader"><h4>Core Skills, Knowledge &amp; Technologies:</h4></section>
+            <section class="section">
+                <div class="sectiondata">
+                    <ul>
+                        <li><b>Testing:</b> Manual & exploratory testing, regression, functional, negative, edge cases,
+                            RESTful API validation, requirements analysis.</li>
+                        <li><b>Tools:</b> Jira, Confluence, Jira AIO, Azure Test Plans, HP Quality Center, Postman, Swagger.</li>
+                        <li><b>Databases:</b> Oracle SQL, MySQL, MSSQL, MongoDB (basic).</li>
+                        <li><b>Development:</b> VB.Net, C#, MonoGame (basic), Javascript (jQuery, basic Node.js), Github, Github
+                            Desktop, Visual Studio, VS Code, HTML, CSS3, PHP (basic), Java 8 (basic).</li>
+                        <li><b>Collaboration:</b> Agile/Scrum environments, defect triage, dev-QA communication, cross-functional
+                            coordination.</li>
+                    </ul>
+                </div>
+            </section>
+            <br><hr><br>
+            <section class="section sectionheader"><h4>Work Experience</h4></section>
+            <section class="section sectiondata">
+                <section class="job">
+                    <button class="job-header">
+                        <h5>Neural Software Solutions - Mid-Tier QA Engineer</h5>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="job-body">
+                        <div class="job-content">
+                            <ul>
+                                <li>Designed and executed functional, negative, and edge case test scenarios for RESTful APIs
+                                    using Postman and Swagger.</li>
+                                <li>Validated API-driven changes via application UI, ensuring data consistency between API
+                                    responses and webapp displays.</li>
+                                <li>Created and maintained test cases in Jira AIO, covering both new features and regression
+                                    scenarios across dev, QA, staging, and UAT environments.</li>
+                                <li>Participated in API refinement sessions, identifying unhandled edge cases and advising
+                                    adjustments to request/response behavior.</li>
+                                <li>Coordinated with developers and product owners under tight deadlines to prioritize execution
+                                    of critical test cases and deliverables.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </section>
+        </div>
+        <div class="cvlanguage">
+            
+        </div>
+    </div>
+    <script type="text/javascript">
+        document.querySelectorAll(".job-header").forEach(header => {
+            header.addEventListener("click", () => {
+                const job = header.parentElement;
+                const body = job.querySelector(".job-body");
+
+                if (job.classList.contains("open")) {
+                    collapse(body, job);
+                } else {
+                    expand(body, job);
+                }
+            });
+        });
+
+        function expand(element, container) {
+            element.style.height = element.scrollHeight + "px";
+            element.addEventListener("transitionend", function handler() {
+                element.style.height = "auto";
+                element.removeEventListener("transitionend", handler);
+            });
+            container.classList.add("open");
+        }
+
+        function collapse(element, container) {
+            element.style.height = element.scrollHeight + "px";
+            element.offsetHeight; // force reflow
+            element.style.height = "0px";
+            container.classList.remove("open");
+        }
+    </script>
+</body>
+</html>
