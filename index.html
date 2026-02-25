@@ -96,12 +96,12 @@
         .sectionheader {
             text-transform: uppercase;
             font-weight: bold;
-            width: 20%;
+            width: 25%;
             float: left;
         }
 
         .sectiondata {
-            width: 80%;
+            width: 75%;
         }
 
         li {
@@ -151,8 +151,7 @@
 </head>
 <body>
     <div class="languageselector">
-        <a href="#">Espa&ntilde;ol</a> |
-        <a href="#">English</a>
+        <a href="javascript:toggleLanguage()">Cambiar idioma | Change language</a>
     </div>
     <div class="container">
         <h1>Fernando R. Bordas D&iacute;az</h1><br><hr><br>
@@ -214,34 +213,403 @@
                 </div>
             </section>
             <br><hr><br>
-            <section class="section sectionheader"><h4>Work Experience</h4></section>
+            <section class="section sectionheader"><h4>Most Recent Work Experience:</h4></section>
             <section class="section sectiondata">
-                <section class="job">
-                    <button class="job-header">
-                        <h5>Neural Software Solutions - Mid-Tier QA Engineer</h5>
-                        <span class="chevron">▼</span>
-                    </button>
-                    <div class="job-body">
-                        <div class="job-content">
-                            <ul>
-                                <li>Designed and executed functional, negative, and edge case test scenarios for RESTful APIs
-                                    using Postman and Swagger.</li>
-                                <li>Validated API-driven changes via application UI, ensuring data consistency between API
-                                    responses and webapp displays.</li>
-                                <li>Created and maintained test cases in Jira AIO, covering both new features and regression
-                                    scenarios across dev, QA, staging, and UAT environments.</li>
-                                <li>Participated in API refinement sessions, identifying unhandled edge cases and advising
-                                    adjustments to request/response behavior.</li>
-                                <li>Coordinated with developers and product owners under tight deadlines to prioritize execution
-                                    of critical test cases and deliverables.</li>
-                            </ul>
+                <div class="sectiondata">
+                    <section class="job">
+                        <button class="job-header">
+                            <h5>Neural Software Solutions - Senior QA Engineer / Junior Software Developer</h5>
+                            <span class="chevron">▼</span>
+                        </button>
+                        <div class="job-body">
+                            <div class="job-content">
+                                <ul>
+                                    <li>Designed and executed functional, negative, and edge case test scenarios for RESTful APIs
+                                        using Postman and Swagger.</li>
+                                    <li>Validated API-driven changes via application UI, ensuring data consistency between API
+                                        responses and webapp displays.</li>
+                                    <li>Created and maintained test cases in Jira AIO, covering both new features and regression
+                                        scenarios across dev, QA, staging, and UAT environments.</li>
+                                    <li>Participated in API refinement sessions, identifying unhandled edge cases and advising
+                                        adjustments to request/response behavior.</li>
+                                    <li>Coordinated with developers and product owners under tight deadlines to prioritize execution
+                                        of critical test cases and deliverables.</li>
+                                    <li>Contributed to development of internal tools.</li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                </section>
+                    </section>
+                    <section class="job">
+                        <button class="job-header">
+                            <h5>FL Betances &amp; Asoc. - Senior QA Engineer / Junior Software Developer</h5>
+                            <span class="chevron">▼</span>
+                        </button>
+                        <div class="job-body">
+                            <div class="job-content">
+                                <ul>
+                                    <li>Partially led QA efforts for web and mobile banking applications, with additional work on
+                                        a custom internal desktop utility (self-developed, later sanitized and published on
+                                        GitHub).</li>
+                                    <li>Streamlined QA processes by redesigning test case development methodology, maximizing
+                                        functional coverage while minimizing redundant or low-value steps through reusable test
+                                        designs.</li>
+                                    <li>Investigated and resolved a high-stakes double-submit authentication bug in the enterprise
+                                        web banking platform, working closely with frontend engineers to correct JavaScript event
+                                        handling.</li>
+                                    <li>Validated transactional and backend processes via Oracle SQL queries, troubleshooting and
+                                        cross-checking against business rules.</li>
+                                    <li>Documented and executed detailed test cases for user stories and defects, ensuring
+                                        compliance with regulatory and business requirements.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </section>
+            <br><hr><br>
+            <section class="section sectionheader"><h4>Developed Projects:</h4></section>
+            <section class="section sectiondata">
+                <div class="sectiondata">
+                    <section class="job">
+                        <button class="job-header">
+                            <h5>Desktop Utility for File Generation with Mass Records</h5>
+                            <span class="chevron">▼</span>
+                        </button>
+                        <div class="job-body">
+                            <div class="job-content">
+                                An application developed for Banco BHD to generate files with large volumes of data to
+                                stress test file upload functionality in their enterprise banking platform. The utility
+                                allowed users to specify the number of records to generate, and had an internal database
+                                originally populated with real data from the QA environment to ensure realistic testing
+                                scenarios. The project was later sanitized and published on GitHub as an archived repository.
+                                <br><br><a href="https://github.com/fbordas/BHD-ArchivosCargaIBE">View on Github</a>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="job">
+                        <button class="job-header">
+                            <h5>Showcase of Kernel2D Custom Game Development Microkernel</h5>
+                            <span class="chevron">▼</span>
+                        </button>
+                        <div class="job-body">
+                            <div class="job-content">
+                                A sample project showcasing my personally developed game-development microengine/microkernel,
+                                Kernel2D, built in C# with MonoGame. The project includes a simple side-view animated character
+                                demoing several simple actions such as walking, jumping and dashing. The microkernel itself is
+                                being designed as a closed-source project, but this project was created to demonstrate the
+                                early capabilities of the engine and to share a sample of the code structure and design patterns
+                                used in the engine's development. The project is still a work in progress and will be updated as
+                                the engine continues to be developed, but the current version already includes a significant portion
+                                of the engine's core systems, such as the entity-component system, the rendering pipeline, and the
+                                input handling system.
+                                <br><br><a href="https://github.com/fbordas/ShowcasingKernel2D">View repository on Github</a>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="job">
+                        <button class="job-header">
+                            <h5>Sprite Image Parser</h5>
+                            <span class="chevron">▼</span>
+                        </button>
+                        <div class="job-body">
+                            <div class="job-contents">
+                                A tiny utility library developed in C# to parse sprite imagesheets and generate XML and JSON files
+                                with the locations and dimensions of each individual sprite in the image. This was developed to assist
+                                with the development and rapid prototyping of Kernel2D.
+                                <br><br><a href="https://github.com/TohnoCoding/SpriteImageParser">View repository on Github</a>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="job">
+                        <button class="job-header">
+                            <h5>FGO Checklist</h5>
+                            <span class="chevron">▼</span>
+                        </button>
+                        <div class="job-body">
+                            <div class="job-content">
+                                An open-source web-based application for players of the popular mobile game <i>Fate/Grand Order</i>
+                                to easily share their character collections. Includes functionality to display accrued copies of each
+                                unit, display wishlist amounts for units, limit displayed units to units released in the Global server
+                                (seeing as the Japanese server is two years ahead in content), and filter units by class and rarity. The
+                                project is built entirely in HTML and JS with no backend, and uses Github Pages for hosting. Data is
+                                saved and stored locally in the user's browser via LocalStorage, and users can import and export their
+                                data via JSON files to share with other users or to keep backups.
+                                <br><br><a href="https://tohnocoding.github.io/fgochecklist">View live app</a> |
+                                <a href="https://github.com/TohnoCoding/fgochecklist">View repository on Github</a>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="job">
+                        <button class="job-header">
+                            <h5>FGO Banners</h5>
+                            <span class="chevron">▼</span>
+                        </button>
+                        <div class="job-body">
+                            <div class="job-content">
+                                An open-source web-based application that allows players of the popular mobile game <i>Fate/Grand Order</i>
+                                to easily view and keep track of upcoming banners in the game for players of the Global server. The project
+                                is built in HTML and JS with no backend, and uses Github Pages for hosting. The application displays all
+                                upcoming banners based on a public, community-maintained spreadsheet that tracks Japanese banner information.
+                                <br><br><a href="https://tohnocoding.github.io/fgobanners">View live app</a> |
+                                <a href="https://github.com/TohnoCoding/fgobanners">View repository on Github</a>
+                        </div>
+                    </section>
+                </div>
+            </section>
+            <br><hr><br>
+            <section class="section sectionheader"><h4>Education and Academic Formation</h4></section>
+            <section class="section sectiondata">
+                <div class="sectiondata">
+                    <ul>
+                        <li><b>Systems Engineering, specialization in Software Development</b> - PUCMM</li>
+                        <li><b>Bachelors</b> - Instituto San Juan Bautista</li>
+                        <li><b>English Language</b> - The Boston Institute</li>
+                        <li><b>Japanese Language</b> - Instituto Dom&iacute;nico-Japon&eacute;s</li>
+                    </ul>
+                </div>
+            </section>
+            <br><hr><br>
+            <section class="section sectionheader"><h4>References:</h4></section>
+            <section class="section sectiondata">
+                <div class="sectiondata">
+                    References available upon request.
+                </div>
             </section>
         </div>
         <div class="cvlanguage">
-            
+            <h3>Informaci&oacuten Personal y Contactos</h3><br>
+            <section class="section">
+                <div class="sectionheader">Fecha de Nacimiento:</div>
+                <div class="sectiondata">18 de Septiembre, 1984</div>
+            </section>
+            <section class="section">
+                <div class="sectionheader">C&eacute;dula de Identidad:</div>
+                <div class="sectiondata">001-1703063-5</div>
+            </section>
+            <section class="section">
+                <div class="sectionheader">Tel&eacute;fono:</div>
+                <div class="sectiondata">809.968.3995</div>
+            </section>
+            <section class="section">
+                <div class="sectionheader">Email:</div>
+                <div class="sectiondata">fbordas@gmail.com</div>
+            </section>
+            <section class="section">
+                <div class="sectionheader">Domicilio Actual:</div>
+                <div class="sectiondata">Mar&iacute;a Montessori 5, Res. Alba, Las Praderas</div>
+            </section>
+            <br><hr><br>
+            <section class="section sectionheader"><h4>Resumen Profesional</h4></section>
+            <section class="section">
+                <div class="sectiondata">
+                    Profesional del &aacute;rea de la ingenier&iacute;a de software con m&aacute;s de 11 a&ntilde;os de experiencia
+                    en desarrollo de software y control de calidad con especializaci&oacute;n en ingenier&iacute;a de c&oacute;digo
+                    backend y pruebas funcionales y exploratorias en plataformas de escritorio, web y API. Amplia experiencia
+                    analizando y desglosando sistemas complejos, identificando casos extremos y situaciones poco comunes, y
+                    colaborando de forma cercana con equipos de desarrollo y QA. S&oacute;lida formación acad&eacute;mica y
+                    profesional en desarrollo de software con proyectos activos en GitHub, en busca de hacer transici&oacute;n 
+                    a un rol h&iacute;brido de QA/desarrollo, o a una posici&oacute;n exclusivamente como desarrollador.
+                </div>
+            </section>
+            <br><hr><br>
+            <section class="section sectionheader"><h4>Perfiles de Github:</h4></section>
+            <section class="section">
+                <div class="sectiondata">
+                    <a href="https://www.github.com/fbordas">https://www.github.com/fbordas</a> (Personal + Profesional)<br><br>
+                    <a href="https://www.github.com/tohnocoding">https://www.github.com/tohnocoding</a> (Proyectos personales y hobbies)
+                </div>
+            </section>
+            <br><hr><br>
+            <section class="section sectionheader"><h4>Principales Competencias, Conocimientos y Tecnolog&iacute;as:</h4></section>
+            <section class="section">
+                <div class="sectiondata">
+                    <ul>
+                        <li><b>Testing:</b> Pruebas manuales y exploratorias, regresión, pruebas funcionales, pruebas negativas,
+                            casos extremos, validación de RESTful APIs, análisis de requerimientos.</li>
+                        <li><b>Herramientas:</b> Jira, Confluence, Jira AIO, Azure Test Plans, HP Quality Center, Postman, Swagger.</li>
+                        <li><b>Bases de datos:</b> Oracle SQL, MySQL, MSSQL, MongoDB (B&aacute;sico).</li>
+                        <li><b>Desarrollo:</b> VB.Net, C#, MonoGame (b&aacute;sico), Javascript (jQuery, Node.js b&aacute;sico),
+                            Github, Github Desktop, Visual Studio, VS Code, HTML, CSS3, PHP (b&aacute;sico), Java 8 (b&aacute;sico).</li>
+                        <li><b>Colaboraci&oacute;n:</b> Ambientes ágiles/Scrum, triage de defectos, comunicación efectiva y productiva
+                            entre QA y desarrollo, coordinación interfuncional.</li>
+                    </ul>
+                </div>
+            </section>
+            <br><hr><br>
+            <section class="section sectionheader"><h4>Experiencia Laboral M&aacute;s Reciente:</h4></section>
+            <section class="section sectiondata">
+                <div class="sectiondata">
+                    <section class="job">
+                        <button class="job-header">
+                            <h5>Neural Software Solutions - Ingeniero de QA <i>Senior</i> / Desarrollador <i>Junior</i></h5>
+                            <span class="chevron">▼</span>
+                        </button>
+                        <div class="job-body">
+                            <div class="job-content">
+                                <ul>
+                                    <li>Diseño y ejecuci&oacute;n de pruebas funcionales, negativas y de casos extremos para REST APIs
+                                        utilizando Postman y Swagger.</li>
+                                    <li>Validaci&oacute;n de cambios producidos por consultas a API a través de la interfaz gráfica de la
+                                        aplicaci&oacute;n, garantizando la consistencia de la data entre las respuestas de API y la data
+                                        mostrada por la aplicaci&oacute;n web.</li>
+                                    <li>Creaci&oacute;n y mantenimiento de casos de prueba en Jira AIO, llevando cobertura de tanto nuevas
+                                        funcionalidades como de escenarios de regresi&oacute;n en ambientes de desarrollo, QA,
+                                        pre-producci&oacute;n y aceptaci&oacute;n de usuarios.</li>
+                                    <li>Participaci&oacute;n cercana en sesiones de refinamiento, identificando casos y situaciones extremas
+                                        no manejadas y asesorando ajustes al equipo de desarrollo para tener mejor control de las llamadas
+                                        y las respuestas de endpoints de API.</li>
+                                    <li>Coordinaci&oacute;n entre desarrolladores y due&ntilde;os de producto bajo estrictos l&iacute;mites
+                                        de tiempo para priorizaci&oacute;n de casos de prueba cr&iacute;ticos y otros entregables.</li>
+                                    <li>Contribuci&oacute;n al desarrollo de herramientas internas.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="job">
+                        <button class="job-header">
+                            <h5>FL Betances &amp; Asoc. - Ingeniero QA <i>Senior</i> / Desarrollador <i>Junior</i></h5>
+                            <span class="chevron">▼</span>
+                        </button>
+                        <div class="job-body">
+                            <div class="job-content">
+                                <ul>
+                                    <li>Liderado parcial de esfuerzos de QA para aplicaciones de banca empresarial web y m&oacute;vil,
+                                        con trabajo adicional de desarrollo en una aplicaci&oacute;n utilitaria de escritorio
+                                        (desarrollada internamente y más tarde sanitizada y publicada en GitHub como repositorio
+                                        archivado).</li>
+                                    <li>Pulido de los procesos de control de calidad mediante el redise&ntilde;o de las metodolog&iacute;as
+                                        de desarrollo de casos de prueba, maximizando cobertura funcional y minimizando el uso de
+                                        elementos y pasos redundantes o de poco valor.</li>
+                                    <li>Participaci&oacute;n íntegra en la investigaci&oacute;n de un error de doble sometimiento de
+                                        autenticaci&oacute;n en la plataforma web de banca empresarial, trabajando de la mano con
+                                        ingenieros de frontend para resolver el inconveniente debido a apilado incorrecto de
+                                        eventos JavaScript.</li>
+                                    <li>Validación de procesos de backend y transaccionales a través de consultas SQL en bases de datos
+                                        Oracle, confirmando resultados y verificando valores con las reglas de negocio.</li>
+                                    <li>Documentación y ejecuci&oacute;n de casos de prueba detallados para historias de usuario y defectos,
+                                        garantizando el cumplimiento total de los requerimientos regulatorios y de negocios.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </section>
+            <br><hr><br>
+            <section class="section sectionheader"><h4>Proyectos desarrollados:</h4></section>
+            <section class="section sectiondata">
+                <div class="sectiondata">
+                    <section class="job">
+                        <button class="job-header">
+                            <h5>Utilitario de escritorio para generaci&oacute;n de archivos con grandes vol&uacute;menes de datos</h5>
+                            <span class="chevron">▼</span>
+                        </button>
+                        <div class="job-body">
+                            <div class="job-content">
+                                Aplicaci&oacute;n desarrollada para uso interno del Banco BHD para generar archivos con grandes
+                                vol&uacute;menes de datos para pruebas de resistencia a la funcionalidad de carga de archivos en
+                                su plataforma de banca empresarial. El utilitario permit&iacute;a a los usuarios especificar la
+                                cantidad de registros a generar, y contaba con una base de datos interna originalmente populada
+                                con datos reales del ambiente de QA para garantizar escenarios de prueba realistas. El proyecto
+                                fue posteriormente sanitizado y publicado en GitHub como un repositorio archivado.
+                                <br><br><a href="https://github.com/fbordas/BHD-ArchivosCargaIBE">Ver en Github</a>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="job">
+                        <button class="job-header">
+                            <h5>Showcase of Kernel2D Custom Game Development Microkernel</h5>
+                            <span class="chevron">▼</span>
+                        </button>
+                        <div class="job-body">
+                            <div class="job-content">
+                                Un proyecto de muestra que exhibe mi microkernel/micromotor de desarrollo de juegos desarrollado
+                                personalmente, Kernel2D, construido en C# con MonoGame. El proyecto incluye una demostraci&oacute;n de
+                                un personaje animado en vista lateral realizando varias acciones simples como caminar, saltar y derrapar.
+                                El microkernel en s&iacute; est&aacute; dise&ntilde;ado como un proyecto de c&oacute;digo cerrado,
+                                pero este proyecto fue creado para demostrar las capacidades tempranas del motor y para compartir una
+                                muestra de la estructura del c&oacute;digo y los patrones de dise&ntilde;o utilizados en el desarrollo
+                                del motor. El proyecto a&uacute;n est&aacute; en proceso de desarrollo y ser&aacute; actualizado a
+                                medida que el motor contin&uacute;e desarroll&aacute;ndose, pero la versi&oacute;n actual ya incluye
+                                una porci&oacute;n significativa de los sistemas centrales del motor, como el sistema de
+                                entidad-componente, la canalizaci&oacute;n de renderizado y el sistema de manejo de entradas.
+                                <br><br><a href="https://github.com/fbordas/ShowcasingKernel2D">Ver repositorioen Github</a>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="job">
+                        <button class="job-header">
+                            <h5>Sprite Image Parser</h5>
+                            <span class="chevron">▼</span>
+                        </button>
+                        <div class="job-body">
+                            <div class="job-contents">
+                                Un utilitario peque&ntilde;o desarrollado en C# para analizar hojas de sprites y generar archivos XML y JSON
+                                con las ubicaciones y dimensiones de cada sprite individual en la imagen. Esto fue desarrollado para
+                                asistir con el desarrollo y prototipado r&aacute;pido de Kernel2D.
+                                <br><br><a href="https://github.com/TohnoCoding/SpriteImageParser">Ver repositorio en Github</a>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="job">
+                        <button class="job-header">
+                            <h5>FGO Checklist</h5>
+                            <span class="chevron">▼</span>
+                        </button>
+                        <div class="job-body">
+                            <div class="job-content">
+                                Una aplicaci&oacute;n web de c&oacute;digo abierto para jugadores del popular juego m&oacute;vil
+                                <i>Fate/Grand Order</i> para compartir f&aacute;cilmente sus colecciones de personajes. Incluye
+                                funcionalidad para mostrar las copias acumuladas de cada unidad, mostrar las cantidades de la lista
+                                de deseos para las unidades, limitar los personajes mostrados s&oacute;lo a aquellos lanzados en el
+                                servidor global (dado que el servidor japon&eacute;s est&aacute; dos a&ntilde;os por delante en
+                                contenido), y filtrar las unidades por clase y rareza. El proyecto est&aacute; construido
+                                completamente en HTML y JS sin backend, y utiliza Github Pages para hosting. Los datos se guardan
+                                y almacenan localmente en el navegador del usuario a trav&eacute;s de LocalStorage, y los usuarios
+                                pueden importar y exportar sus datos a trav&eacute;s de archivos JSON para compartir con otros
+                                usuarios o para mantener copias de seguridad.
+                                <br><br><a href="https://tohnocoding.github.io/fgochecklist">Ver aplicaci&oacute;n</a> |
+                                <a href="https://github.com/TohnoCoding/fgochecklist">Ver repositorio en Github</a>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="job">
+                        <button class="job-header">
+                            <h5>FGO Banners</h5>
+                            <span class="chevron">▼</span>
+                        </button>
+                        <div class="job-body">
+                            <div class="job-content">
+                                Una aplicaci&oacute;n web de c&oacute;digo abierto que permite a los jugadores del popular juego
+                                m&oacute;vil <i>Fate/Grand Order</i> ver y llevar un seguimiento de los banners pr&oacute;ximos en
+                                el juego para los jugadores del servidor global. El proyecto est&aacute; construido en HTML y JS sin backend,
+                                y utiliza Github Pages para hosting. La aplicaci&oacute;n muestra todos los banners pr&oacute;ximos basados
+                                en una hoja de c&aacute;lculo p&uacute;blica mantenida por la comunidad que rastrea la informaci&oacute;n
+                                de los banners japoneses.
+                                <br><br><a href="https://tohnocoding.github.io/fgobanners">Ver aplicaci&oacute;n</a> |
+                                <a href="https://github.com/TohnoCoding/fgobanners">Ver repositorio en Github</a>
+                        </div>
+                    </section>
+                </div>
+            </section>
+            <br><hr><br>
+            <section class="section sectionheader"><h4>Educaci&oacute;n y Formaci&oacute;n Acad&eacute;mica</h4></section>
+            <section class="section sectiondata">
+                <div class="sectiondata">
+                    <ul>
+                        <li><b>Ingenier&iacute;a de Sistemas, Concentraci&oacute;n en Desarrollo de Software</b> - PUCMM</li>
+                        <li><b>Bachiller</b> - Instituto San Juan Bautista</li>
+                        <li><b>Idioma Ingl&eacute;s</b> - The Boston Institute</li>
+                        <li><b>Idioma Japon&eacute;s</b> - Instituto Dom&iacute;nico-Japon&eacute;s</li>
+                    </ul>
+                </div>
+            </section>
+            <br><hr><br>
+            <section class="section sectionheader"><h4>References:</h4></section>
+            <section class="section sectiondata">
+                <div class="sectiondata">
+                    Referencias disponibles a solicitud de la parte interesada.
+                </div>
+            </section>
         </div>
     </div>
     <script type="text/javascript">
@@ -249,7 +617,6 @@
             header.addEventListener("click", () => {
                 const job = header.parentElement;
                 const body = job.querySelector(".job-body");
-
                 if (job.classList.contains("open")) {
                     collapse(body, job);
                 } else {
@@ -272,6 +639,12 @@
             element.offsetHeight; // force reflow
             element.style.height = "0px";
             container.classList.remove("open");
+        }
+
+        function toggleLanguage() {
+                document.querySelectorAll(".cvlanguage").forEach(lang => {
+                    lang.classList.toggle("active");
+                });
         }
     </script>
 </body>
