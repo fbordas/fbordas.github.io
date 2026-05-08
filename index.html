@@ -189,17 +189,40 @@
         .job.open .chevron {
             transform: rotate(180deg);
         }
+        @media print {
+            h1 {  
+                font-size: 2.5em;
+                padding-top: 35px;
+            }
+
+            h3 {
+                font-size: 1.9em;
+            }
+
+            h4 {
+                font-size: 1.25em;
+                margin-bottom: 5px;
+            }
+            #downloadlink { display:none; }
+            #languageselector { display:none; }
+            .chevron { display:none; }
+            .job-body {
+                height:auto;
+                overflow:auto;
+                border-bottom: 1px solid black;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="languageselector">
+    <div class="languageselector" id="languageselector">
         <a href="javascript:toggleLanguage()">Idioma | Language</a>
     </div>
     <div class="container">
         <br>
         <h1>Fernando R. Bordas D&iacute;az</h1><br><hr><br>
         <div class="cvlanguage active">
-            <div class="languageselector">
+            <div class="languageselector" id="downloadlink">
                 <a href="fernando_bordas_en_cv.pdf">Download printable PDF</a>
             </div>
             <h3>Personal &amp; Contact Information</h3><br>
