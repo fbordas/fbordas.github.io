@@ -189,40 +189,17 @@
         .job.open .chevron {
             transform: rotate(180deg);
         }
-        @media print {
-            h1 {  
-                font-size: 2.5em;
-                padding-top: 35px;
-            }
-
-            h3 {
-                font-size: 1.9em;
-            }
-
-            h4 {
-                font-size: 1.25em;
-                margin-bottom: 5px;
-            }
-            #downloadlink { display:none; }
-            #languageselector { display:none; }
-            .chevron { display:none; }
-            .job-body {
-                height:auto;
-                overflow:auto;
-                border-bottom: 1px solid black;
-            }
-        }
     </style>
 </head>
 <body>
-    <div class="languageselector" id="languageselector">
+    <div class="languageselector">
         <a href="javascript:toggleLanguage()">Idioma | Language</a>
     </div>
     <div class="container">
         <br>
         <h1>Fernando R. Bordas D&iacute;az</h1><br><hr><br>
         <div class="cvlanguage active">
-            <div class="languageselector" id="downloadlink">
+            <div class="languageselector">
                 <a href="fernando_bordas_en_cv.pdf">Download printable PDF</a>
             </div>
             <h3>Personal &amp; Contact Information</h3><br>
@@ -277,7 +254,7 @@
                         <li><b>Tools:</b> Jira, Confluence, Jira AIO, Azure Test Plans, HP Quality Center, Postman, Swagger.</li>
                         <li><b>Databases:</b> Oracle SQL, MySQL, MSSQL, MongoDB (basic).</li>
                         <li><b>Development:</b> VB.Net, C#, MonoGame (basic), Javascript (jQuery, basic Node.js), Github, Github
-                            Desktop, Visual Studio, VS Code, HTML, CSS3, PHP (basic), Java 8 (basic), PDFSharp, MigraDoc.</li>
+                            Desktop, Visual Studio, VS Code, HTML, CSS3, PHP (basic), Java 8 (basic).</li>
                         <li><b>Collaboration:</b> Agile/Scrum environments, defect triage, dev-QA communication, cross-functional
                             coordination.</li>
                     </ul>
@@ -287,19 +264,6 @@
             <section class="section sectionheader"><h4>Most Recent Work Experience:</h4></section>
             <section class="section sectiondata">
                 <div class="sectiondata">
-                    <section class="job">
-                        <button class="job-header">
-                            <h5>Junta Central Electoral - Developer II</h5>
-                            <span class="chevron">▼</span>
-                        </button>
-                        <div class="job-body">
-                            <div class="job-content">
-                                <ul>
-                                    <li>Development of internal management and ERP tools.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </section>
                     <section class="job">
                         <button class="job-header">
                             <h5>Neural Software Solutions - Senior QA Engineer / Junior Software Developer</h5>
@@ -354,6 +318,22 @@
             <section class="section sectionheader"><h4>Developed Projects:</h4></section>
             <section class="section sectiondata">
                 <div class="sectiondata">
+                    <section class="job">
+                        <button class="job-header">
+                            <h5>Steam Library Data Exporter</h5>
+                            <span class="chevron">▼</span>
+                        </button>
+                        <div class="job-body">
+                            <div class="job-content">
+                                A tiny console application to extract a JSON file containing select data from a Steam account.
+                                Requires a freely obtainable API key and the Steam64 ID of the account to scrape. Can be utilized
+                                to export a snapshot of a library, feed it into other programs/apps or AIs/LLMs for analysis
+                                purposes, or for sharing with friends.
+                                <br><br><a target="_blank" href="https://github.com/TohnoCoding/SteamLibraryDataExporter">View
+                                repository on Github</a>
+                            </div>
+                        </div>
+                    </section>
                     <section class="job">
                         <button class="job-header">
                             <h5>Desktop Utility for File Generation with Mass Records</h5>
@@ -521,8 +501,7 @@
                         <li><b>Herramientas:</b> Jira, Confluence, Jira AIO, Azure Test Plans, HP Quality Center, Postman, Swagger.</li>
                         <li><b>Bases de datos:</b> Oracle SQL, MySQL, MSSQL, MongoDB (B&aacute;sico).</li>
                         <li><b>Desarrollo:</b> VB.Net, C#, MonoGame (b&aacute;sico), Javascript (jQuery, Node.js b&aacute;sico),
-                            Github, Github Desktop, Visual Studio, VS Code, HTML, CSS3, PHP (b&aacute;sico), Java 8 (b&aacute;sico), PDFSharp,
-                            MigraDoc.</li>
+                            Github, Github Desktop, Visual Studio, VS Code, HTML, CSS3, PHP (b&aacute;sico), Java 8 (b&aacute;sico).</li>
                         <li><b>Colaboraci&oacute;n:</b> Ambientes ágiles/Scrum, triage de defectos, comunicación efectiva y productiva
                             entre QA y desarrollo, coordinación interfuncional.</li>
                     </ul>
@@ -532,19 +511,6 @@
             <section class="section sectionheader"><h4>Experiencia Laboral M&aacute;s Reciente:</h4></section>
             <section class="section sectiondata">
                 <div class="sectiondata">
-                    <section class="job">
-                        <button class="job-header">
-                            <h5>Junta Central Electoral - Desarrollador II</h5>
-                            <span class="chevron">▼</span>
-                        </button>
-                        <div class="job-body">
-                            <div class="job-content">
-                                <ul>
-                                    <li>Desarrollo de herramientas internas de administraci&oacute;n y ERP.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </section>
                     <section class="job">
                         <button class="job-header">
                             <h5>Neural Software Solutions - Ingeniero de QA <i>Senior</i> / Desarrollador <i>Junior</i></h5>
@@ -606,10 +572,28 @@
                 <div class="sectiondata">
                     <section class="job">
                         <button class="job-header">
-                            <h5>Utilitario de escritorio para generaci&oacute;n de archivos con grandes vol&uacute;menes de datos</h5>
+                            <h5>Exportador de datos de biblioteca de Steam</h5>
                             <span class="chevron">▼</span>
                         </button>
                         <div class="job-body">
+                            <div class="job-content">
+                                Una microscópica aplicación de consola para extraer un archivo JSON que contiene data selecta de una
+                                cuenta de Steam. Requiere una llave de API obtenible gratuitamente y el identificador Steam64 de la
+                                cuenta de la cual se desea extraer informaci&oacute;n. Puede ser utilizado para exportar una captura
+                                de datos de la cuenta en el momento de la extracci&oacute;n, para compartir con amistades o contactos,
+                                para alimentar otras aplicaciones, o incluso para alimentar inteligencias artificiales/LLMs para
+                                an&aacute;lisis de la data extra&iacute;da.
+                                <br><br><a target="_blank" href="https://github.com/TohnoCoding/SteamLibraryDataExporter">Ver
+                                repositorio en Github</a>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="job">
+                        <button class="job-header">
+                            <h5>Utilitario de escritorio para generaci&oacute;n de archivos con grandes vol&uacute;menes de datos</h5>
+                            <span class="chevron">▼</span>
+                        </button>
+                    <div class="job-body">
                             <div class="job-content">
                                 Aplicaci&oacute;n desarrollada para uso interno del Banco BHD para generar archivos con grandes
                                 vol&uacute;menes de datos para pruebas de resistencia a la funcionalidad de carga de archivos en
