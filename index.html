@@ -189,6 +189,127 @@
         .job.open .chevron {
             transform: rotate(180deg);
         }
+        
+        @media print {
+            /* Remove browser-page decoration and use the printable page width */
+            @page {
+                size: auto;
+                margin: 11mm;
+            }
+
+            html, body {
+                background: #ffffff !important;
+                color: #000000 !important;
+                min-height: 0 !important;
+                height: auto !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                overflow: visible !important;
+            }
+
+            /* Hide language toggle and download controls */
+            .languageselector {
+                display: none !important;
+            }
+
+            /* Print the currently selected language only */
+            .cvlanguage {
+                display: none !important;
+            }
+
+            .cvlanguage.active {
+                display: block !important;
+            }
+
+            /* Remove the on-screen container styling */
+            .container {
+                width: 100% !important;
+                max-width: none !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                position: static !important;
+                left: auto !important;
+                transform: none !important;
+                border: none !important;
+                border-radius: 0 !important;
+                box-shadow: none !important;
+                background: #ffffff !important;
+                color: #000000 !important;
+            }
+
+            /* Expand every project and work-experience description */
+            .job-body {
+                display: block !important;
+                height: auto !important;
+                max-height: none !important;
+                overflow: visible !important;
+                transition: none !important;
+            }
+
+            /* Remove interactive button styling */
+            .job-header {
+                color: #000000 !important;
+                background: transparent !important;
+                border: none !important;
+                cursor: default !important;
+                break-after: avoid;
+                page-break-after: avoid;
+            }
+
+            /* Hide expand/collapse arrows */
+            .chevron {
+                display: none !important;
+            }
+
+            /* Avoid splitting individual job entries where possible */
+            .job {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+
+            /* Keep links readable and avoid printing dark backgrounds */
+            a {
+                color: #000000 !important;
+                text-decoration: underline;
+            }
+
+            h1, h2, h3, h4, h5 {
+                color: #000000 !important;
+                break-after: avoid;
+                page-break-after: avoid;
+            }
+
+            /* Preserve readable text and borders in the printout */
+            * {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            /* Keep section headings and content in consistent columns */
+            .section {
+                display: grid !important;
+                grid-template-columns: 100% minmax(0, 1fr);
+                column-gap: 10px;
+                align-items: start;
+            }
+            
+            .infosection {
+                grid-template-columns: 30% minmax(0, 1fr) !important;
+            }
+
+            /* Override the widths used by the screen layout */
+            .sectionheader {
+                float: none !important;
+                width: auto !important;
+            }
+
+            .sectiondata {
+                width: auto !important;
+                min-width: 0;
+                margin-left: 0% !important;
+                z-index: 999999 !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -196,30 +317,29 @@
         <a href="javascript:toggleLanguage()">Idioma | Language</a>
     </div>
     <div class="container">
-        <br>
         <h1>Fernando R. Bordas D&iacute;az</h1><br><hr><br>
         <div class="cvlanguage active">
             <div class="languageselector">
-                <a href="fernando_bordas_en_cv.pdf">Download printable PDF</a>
+                <a href="javascript:window.print()">Print this document</a>
             </div>
             <h3>Personal &amp; Contact Information</h3><br>
-            <section class="section">
+            <section class="section infosection">
                 <div class="sectionheader">Birth Date:</div>
                 <div class="sectiondata">September 18th, 1984</div>
             </section>
-            <section class="section">
+            <section class="section infosection">
                 <div class="sectionheader">National ID:</div>
                 <div class="sectiondata">001-1703063-5</div>
             </section>
-            <section class="section">
+            <section class="section infosection">
                 <div class="sectionheader">Phone:</div>
                 <div class="sectiondata">809.968.3995</div>
             </section>
-            <section class="section">
+            <section class="section infosection">
                 <div class="sectionheader">Email:</div>
                 <div class="sectiondata"><a href="mailto:fbordas@gmail.com">fbordas@gmail.com</a></div>
             </section>
-            <section class="section">
+            <section class="section infosection">
                 <div class="sectionheader">Current Address:</div>
                 <div class="sectiondata">Mar&iacute;a Montessori 5, Res. Alba, Las Praderas</div>
             </section>
@@ -264,6 +384,23 @@
             <section class="section sectionheader"><h4>Most Recent Work Experience:</h4></section>
             <section class="section sectiondata">
                 <div class="sectiondata">
+                    <section class="job">
+                        <button class="job-header">
+                            <h5>Junta Central Electoral - Developer II (current)</h5>
+                            <span class="chevron">▼</span>
+                        </button>
+                        <div class="job-body">
+                            <div class="job-content">
+                                <ul>
+                                    <li>In-house design, development and maintaining of internal API architecture for travel requests
+                                        management system.</li>
+                                    <li>Designed unit tests for developed software.</li>
+                                    <li>Worked collaboratively with multiple other developers, project managers, process analysts and
+                                        functional analysts to fully test software E2E before release.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
                     <section class="job">
                         <button class="job-header">
                             <h5>Neural Software Solutions - Senior QA Engineer / Junior Software Developer</h5>
@@ -424,7 +561,7 @@
                 </div>
             </section>
             <br><hr><br>
-            <section class="section sectionheader"><h4>Education and Academic Formation</h4></section>
+            <section class="section sectionheader"><h4>Education &amp; Academic Formation</h4></section>
             <section class="section sectiondata">
                 <div class="sectiondata">
                     <ul>
@@ -445,26 +582,26 @@
         </div>
         <div class="cvlanguage">
             <div class="languageselector">
-                <a href="fernando_bordas_sp_cv.pdf">Descargar PDF para impresi&oacute;n</a>
+                <a href="javascript:window.print()">Imprimir este documento</a>
             </div>
             <h3>Informaci&oacuten Personal y Contactos</h3><br>
-            <section class="section">
+            <section class="section infosection">
                 <div class="sectionheader">Fecha de Nacimiento:</div>
                 <div class="sectiondata">18 de Septiembre, 1984</div>
             </section>
-            <section class="section">
+            <section class="section infosection">
                 <div class="sectionheader">C&eacute;dula de Identidad:</div>
                 <div class="sectiondata">001-1703063-5</div>
             </section>
-            <section class="section">
+            <section class="section infosection">
                 <div class="sectionheader">Tel&eacute;fono:</div>
                 <div class="sectiondata">809.968.3995</div>
             </section>
-            <section class="section">
+            <section class="section infosection">
                 <div class="sectionheader">Email:</div>
                 <div class="sectiondata"><a href="mailto:fbordas@gmail.com">fbordas@gmail.com</a></div>
             </section>
-            <section class="section">
+            <section class="section infosection">
                 <div class="sectionheader">Domicilio Actual:</div>
                 <div class="sectiondata">Mar&iacute;a Montessori 5, Res. Alba, Las Praderas</div>
             </section>
@@ -511,6 +648,24 @@
             <section class="section sectionheader"><h4>Experiencia Laboral M&aacute;s Reciente:</h4></section>
             <section class="section sectiondata">
                 <div class="sectiondata">
+                    <section class="job">
+                        <button class="job-header">
+                            <h5>Junta Central Electoral - Desarrollador II (actual)</h5>
+                            <span class="chevron">▼</span>
+                        </button>
+                        <div class="job-body">
+                            <div class="job-content">
+                                <ul>
+                                    <li>Dise&ntilde;o interno, desarrollo y mantenimiento de arquitectura de API interna para sistema
+                                        de gesti&oacute;n de vi&aacute;ticos.</li>
+                                    <li>Dise&ntilde;o y desarrollo de pruebas unitarias para software desarrollado.</li>
+                                    <li>Trabajo colaborativo con m&uacute;ltiples otros desarrolladores, <i>project managers</i>,
+                                        y analistas de procesos y funcionales para ejecuci&oacute;n de pruebas E2E previo al
+                                        lanzamiento oficial del software.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
                     <section class="job">
                         <button class="job-header">
                             <h5>Neural Software Solutions - Ingeniero de QA <i>Senior</i> / Desarrollador <i>Junior</i></h5>
@@ -567,7 +722,7 @@
                 </div>
             </section>
             <br><hr><br>
-            <section class="section sectionheader"><h4>Proyectos desarrollados:</h4></section>
+            <section class="section sectionheader"><h4>Proyectos:</h4></section>
             <section class="section sectiondata">
                 <div class="sectiondata">
                     <section class="job">
@@ -634,7 +789,7 @@
                             <span class="chevron">▼</span>
                         </button>
                         <div class="job-body">
-                            <div class="job-contents">
+                            <div class="job-content">
                                 Un utilitario peque&ntilde;o desarrollado en C# para analizar hojas de sprites y generar archivos XML y JSON
                                 con las ubicaciones y dimensiones de cada sprite individual en la imagen. Esto fue desarrollado para
                                 asistir con el desarrollo y prototipado r&aacute;pido de Kernel2D.
