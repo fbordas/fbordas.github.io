@@ -1,3 +1,3 @@
 # Fernando Bordas
-## Online CV
+## Online CV // CV En Línea
 ### https://fbordas.github.io
