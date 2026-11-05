@@ -151,6 +151,14 @@
             margin-left: 30px;
         }
 
+        .print {
+            display: none;
+        }
+        
+        .screen {
+            display: inline-block;
+        }
+
         .job {
             padding: 0.5rem 0;
         }
@@ -196,6 +204,14 @@
                 size: auto;
                 margin: 11mm;
             }
+            
+            h1 {
+                font-size: 3em !important;
+            }
+            
+            h3 {
+                font-size: 1.7em !important;
+            }
 
             html, body {
                 background: #ffffff !important;
@@ -209,6 +225,14 @@
 
             /* Hide language toggle and download controls */
             .languageselector {
+                display: none !important;
+            }
+            
+            .print {
+                display: inline-block !important;
+            }
+            
+            .screen {
                 display: none !important;
             }
 
@@ -321,7 +345,7 @@
             <div class="languageselector">
                 <a href="javascript:window.print()">Print this document</a>
             </div>
-            <h3>Personal &amp; Contact Information</h3><br>
+            <h3>PERSONAL &amp; CONTACT INFORMATION</h3><br>
             <section class="section infosection">
                 <div class="sectionheader">Birth Date:</div>
                 <div class="sectiondata">September 18th, 1984</div>
@@ -336,7 +360,7 @@
             </section>
             <section class="section infosection">
                 <div class="sectionheader">Email:</div>
-                <div class="sectiondata"><a href="mailto:fbordas@gmail.com">fbordas@gmail.com</a></div>
+                <div class="sectiondata"><a class="screen" href="mailto:fbordas@gmail.com">fbordas@gmail.com</a><span class="print">fbordas@gmail.com</span></div>
             </section>
             <section class="section infosection">
                 <div class="sectionheader">Current Address:</div>
@@ -465,8 +489,8 @@
                                 Requires a freely obtainable API key and the Steam64 ID of the account to scrape. Can be utilized
                                 to export a snapshot of a library, feed it into other programs/apps or AIs/LLMs for analysis
                                 purposes, or for sharing with friends.
-                                <br><br><a target="_blank" href="https://github.com/TohnoCoding/SteamLibraryDataExporter">View
-                                repository on Github</a>
+                                <br><br><a class="screen" target="_blank" href="https://github.com/TohnoCoding/SteamLibraryDataExporter">View
+                                repository on Github</a> <span class="print">Github repository: https://github.com/TohnoCoding/SteamLibraryDataExporter</span>
                             </div>
                         </div>
                     </section>
@@ -482,8 +506,8 @@
                                 allowed users to specify the number of records to generate, and had an internal database
                                 originally populated with real data from the QA environment to ensure realistic testing
                                 scenarios. The project was later sanitized and published on GitHub as an archived repository.
-                                <br><br><a target="_blank" href="https://github.com/fbordas/BHD-ArchivosCargaIBE">View
-                                repository on Github</a>
+                                <br><br><a class="screen" target="_blank" href="https://github.com/fbordas/BHD-ArchivosCargaIBE">View
+                                repository on Github</a> <span class="print">Github repository: https://github.com/fbordas/BHD-ArchivosCargaIBE</span>
                             </div>
                         </div>
                     </section>
@@ -503,8 +527,8 @@
                                 the engine continues to be developed, but the current version already includes a significant portion
                                 of the engine's core systems, such as the entity-component system, the rendering pipeline, and the
                                 input handling system.
-                                <br><br><a target="_blank" href="https://github.com/fbordas/ShowcasingKernel2D">View
-                                repository on Github</a>
+                                <br><br><a class="screen" target="_blank" href="https://github.com/fbordas/ShowcasingKernel2D">View
+                                repository on Github</a> <span class="print">Github repository: https://github.com/fbordas/ShowcasingKernel2D</span>
                             </div>
                         </div>
                     </section>
@@ -518,8 +542,8 @@
                                 A tiny utility library developed in C# to parse sprite imagesheets and generate XML and JSON files
                                 with the locations and dimensions of each individual sprite in the image. This was developed to assist
                                 with the development and rapid prototyping of Kernel2D.
-                                <br><br><a target="_blank" href="https://github.com/TohnoCoding/SpriteImageParser">View
-                                repository on Github</a>
+                                <br><br><a class="screen" target="_blank" href="https://github.com/TohnoCoding/SpriteImageParser">View
+                                repository on Github</a> <span class="print">Github repository: https://github.com/TohnoCoding/SpriteImageParser</span>
                             </div>
                         </div>
                     </section>
@@ -537,8 +561,10 @@
                                 project is built entirely in HTML and JS with no backend, and uses Github Pages for hosting. Data is
                                 saved and stored locally in the user's browser via LocalStorage, and users can import and export their
                                 data via JSON files to share with other users or to keep backups.
-                                <br><br><a target="_blank" href="https://tohnocoding.github.io/fgochecklist">View live app</a> |
-                                <a target="_blank" href="https://github.com/TohnoCoding/fgochecklist">View repository on Github</a>
+                                <br><br><a class="screen" target="_blank" href="https://tohnocoding.github.io/fgochecklist">View live app</a>
+                                <span class="print">Live app: https://tohnocoding.github.io/fgochecklist</span> |
+                                <a class="screen" target="_blank" href="https://github.com/TohnoCoding/fgochecklist">View repository on Github</a> 
+                                <span class="print">Github repository: https://github.com/TohnoCoding/fgochecklist</span>
                             </div>
                         </div>
                     </section>
@@ -554,8 +580,8 @@
                                 workers and infrastructure. Built with extensibility in mind to be used as a full-fledged
                                 general-purpose URL shortener if desired, but some development experience will be required
                                 to account for a number of service limitations.
-                                <br><br><a target="_blank" href="https://github.com/TohnoCoding/fgo-shortener">View
-                                repository on Github</a>
+                                <br><br><a class="screen" target="_blank" href="https://github.com/TohnoCoding/fgo-shortener">View
+                                repository on Github</a> <span class="print">Github repository: https://github.com/TohnoCoding/fgo-shortener</span>
                             </div>
                         </div>
                     </section>
@@ -570,8 +596,10 @@
                                 to easily view and keep track of upcoming banners in the game for players of the Global server. The project
                                 is built in HTML and JS with no backend, and uses Github Pages for hosting. The application displays all
                                 upcoming banners based on a public, community-maintained spreadsheet that tracks Japanese banner information.
-                                <br><br><a target="_blank" href="https://tohnocoding.github.io/fgobanners">View live app</a> |
-                                <a target="_blank" href="https://github.com/TohnoCoding/fgobanners">View repository on Github</a>
+                                <br><br><a class="screen" target="_blank" href="https://tohnocoding.github.io/fgobanners">View live app</a> 
+                                <span class="print">Live app: https://tohnocoding.github.io/fgobanners</span> |
+                                <a target="_blank" href="https://github.com/TohnoCoding/fgobanners">View repository on Github</a> <span
+                                class="print">Github repository: https://github.com/TohnoCoding/fgobanners</span>
                         </div>
                     </section>
                 </div>
@@ -600,7 +628,7 @@
             <div class="languageselector">
                 <a href="javascript:window.print()">Imprimir este documento</a>
             </div>
-            <h3>Informaci&oacuten Personal y Contactos</h3><br>
+            <h3>INFORMACI&Oacute;N PERSONAL Y CONTACTOS</h3><br>
             <section class="section infosection">
                 <div class="sectionheader">Fecha de Nacimiento:</div>
                 <div class="sectiondata">18 de Septiembre, 1984</div>
@@ -738,7 +766,7 @@
                 </div>
             </section>
             <br><hr><br>
-            <section class="section sectionheader"><h4>Proyectos:</h4></section>
+            <section class="section sectionheader"><h4>Proyectos desarrollados:</h4></section>
             <section class="section sectiondata">
                 <div class="sectiondata">
                     <section class="job">
@@ -754,8 +782,9 @@
                                 de datos de la cuenta en el momento de la extracci&oacute;n, para compartir con amistades o contactos,
                                 para alimentar otras aplicaciones, o incluso para alimentar inteligencias artificiales/LLMs para
                                 an&aacute;lisis de la data extra&iacute;da.
-                                <br><br><a target="_blank" href="https://github.com/TohnoCoding/SteamLibraryDataExporter">Ver
-                                repositorio en Github</a>
+                                <br><br><a class="screen" target="_blank" href="https://github.com/TohnoCoding/SteamLibraryDataExporter">Ver
+                                repositorio en Github</a> <span class="print">Repositorio de Github:
+                                https://github.com/TohnoCoding/SteamLibraryDataExporter</span>
                             </div>
                         </div>
                     </section>
@@ -772,8 +801,9 @@
                                 cantidad de registros a generar, y contaba con una base de datos interna originalmente populada
                                 con datos reales del ambiente de QA para garantizar escenarios de prueba realistas. El proyecto
                                 fue posteriormente sanitizado y publicado en GitHub como un repositorio archivado.
-                                <br><br><a target="_blank" href="https://github.com/fbordas/BHD-ArchivosCargaIBE">Ver
-                                repositorio en Github</a>
+                                <br><br><a class="screen" target="_blank" href="https://github.com/fbordas/BHD-ArchivosCargaIBE">Ver
+                                repositorio en Github</a> <span class="print">Repositorio de Github:
+                                https://github.com/fbordas/BHD-ArchivosCargaIBE</span>
                             </div>
                         </div>
                     </section>
@@ -794,8 +824,9 @@
                                 medida que el motor contin&uacute;e desarroll&aacute;ndose, pero la versi&oacute;n actual ya incluye
                                 una porci&oacute;n significativa de los sistemas centrales del motor, como el sistema de
                                 entidad-componente, la canalizaci&oacute;n de renderizado y el sistema de manejo de entradas.
-                                <br><br><a target="_blank" href="https://github.com/fbordas/ShowcasingKernel2D">Ver
-                                repositorio en Github</a>
+                                <br><br><a class="screen" target="_blank" href="https://github.com/fbordas/ShowcasingKernel2D">Ver
+                                repositorio en Github</a> <span class="print">Repositorio de Github:
+                                https://github.com/fbordas/ShowcasingKernel2D</span>
                             </div>
                         </div>
                     </section>
@@ -809,8 +840,9 @@
                                 Un utilitario peque&ntilde;o desarrollado en C# para analizar hojas de sprites y generar archivos XML y JSON
                                 con las ubicaciones y dimensiones de cada sprite individual en la imagen. Esto fue desarrollado para
                                 asistir con el desarrollo y prototipado r&aacute;pido de Kernel2D.
-                                <br><br><a target="_blank" href="https://github.com/TohnoCoding/SpriteImageParser">Ver
-                                repositorio en Github</a>
+                                <br><br><a class="screen" target="_blank" href="https://github.com/TohnoCoding/SpriteImageParser">Ver
+                                repositorio en Github</a> <span class="print">Repositorio de Github:
+                                https://github.com/TohnoCoding/SpriteImageParser</span>
                             </div>
                         </div>
                     </section>
@@ -831,8 +863,10 @@
                                 y almacenan localmente en el navegador del usuario a trav&eacute;s de LocalStorage, y los usuarios
                                 pueden importar y exportar sus datos a trav&eacute;s de archivos JSON para compartir con otros
                                 usuarios o para mantener copias de seguridad.
-                                <br><br><a target="_blank" href="https://tohnocoding.github.io/fgochecklist">Ver aplicaci&oacute;n</a> |
-                                <a target="_blank" href="https://github.com/TohnoCoding/fgochecklist">Ver repositorio en Github</a>
+                                <br><br><a class="screen" target="_blank" href="https://tohnocoding.github.io/fgochecklist">Ver
+                                aplicaci&oacute;n</a> <span class="print">Aplicaci&oacute;n: https://tohnocoding.github.io/fgochecklist</span> |
+                                <a class="screen" target="_blank" href="https://github.com/TohnoCoding/fgochecklist">Ver repositorio en Github</a>
+                                <span class="print">Repositorio de Github: https://github.com/TohnoCoding/fgochecklist</span>
                             </div>
                         </div>
                     </section>
@@ -851,8 +885,9 @@
                                 multi-prop&oacute;sito si as&iacute; se deseara, pero para esto se deber&aacute; tener
                                 experiencia en desarrollo de software para compensar una serie de limitaciones
                                 intencionales de la implementaci&oacute;n actual.
-                                <br><br><a target="_blank" href="https://github.com/TohnoCoding/fgo-shortener">Ver
-                                repositorio en Github</a>
+                                <br><br><a class="screen" target="_blank" href="https://github.com/TohnoCoding/fgo-shortener">Ver
+                                repositorio en Github</a> <span class="print">Repositorio de Github: 
+                                https://github.com/TohnoCoding/fgo-shortener</span>
                             </div>
                         </div>
                     </section>
@@ -869,8 +904,10 @@
                                 y utiliza Github Pages para hosting. La aplicaci&oacute;n muestra todos los banners pr&oacute;ximos basados
                                 en una hoja de c&aacute;lculo p&uacute;blica mantenida por la comunidad que rastrea la informaci&oacute;n
                                 de los banners japoneses.
-                                <br><br><a target="_blank" href="https://tohnocoding.github.io/fgobanners">Ver aplicaci&oacute;n</a> |
-                                <a target="_blank" href="https://github.com/TohnoCoding/fgobanners">Ver repositorio en Github</a>
+                                <br><br><a class="screen" target="_blank" href="https://tohnocoding.github.io/fgobanners">Ver
+                                aplicaci&oacute;n</a> <span class="print">Aplicaci&oacute;n: https://tohnocoding.github.io/fgobanners</span> |
+                                <a class="screen" target="_blank" href="https://github.com/TohnoCoding/fgobanners">Ver repositorio en Github</a>
+                                <span class="print">Repositorio de Github: https://github.com/TohnoCoding/fgobanners</span>
                         </div>
                     </section>
                 </div>
