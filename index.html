@@ -151,6 +151,14 @@
             margin-left: 30px;
         }
 
+        .print {
+            display: none;
+        }
+        
+        .screen {
+            display: inline-block;
+        }
+
         .job {
             padding: 0.5rem 0;
         }
@@ -189,6 +197,142 @@
         .job.open .chevron {
             transform: rotate(180deg);
         }
+        
+        @media print {
+            /* Remove browser-page decoration and use the printable page width */
+            @page {
+                size: auto;
+                margin: 11mm;
+            }
+            
+            h1 {
+                font-size: 3em !important;
+            }
+            
+            h3 {
+                font-size: 1.7em !important;
+            }
+
+            html, body {
+                background: #ffffff !important;
+                color: #000000 !important;
+                min-height: 0 !important;
+                height: auto !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                overflow: visible !important;
+            }
+
+            /* Hide language toggle and download controls */
+            .languageselector {
+                display: none !important;
+            }
+            
+            .print {
+                display: inline-block !important;
+            }
+            
+            .screen {
+                display: none !important;
+            }
+
+            /* Print the currently selected language only */
+            .cvlanguage {
+                display: none !important;
+            }
+
+            .cvlanguage.active {
+                display: block !important;
+            }
+
+            /* Remove the on-screen container styling */
+            .container {
+                width: 100% !important;
+                max-width: none !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                position: static !important;
+                left: auto !important;
+                transform: none !important;
+                border: none !important;
+                border-radius: 0 !important;
+                box-shadow: none !important;
+                background: #ffffff !important;
+                color: #000000 !important;
+            }
+
+            /* Expand every project and work-experience description */
+            .job-body {
+                display: block !important;
+                height: auto !important;
+                max-height: none !important;
+                overflow: visible !important;
+                transition: none !important;
+            }
+
+            /* Remove interactive button styling */
+            .job-header {
+                color: #000000 !important;
+                background: transparent !important;
+                border: none !important;
+                cursor: default !important;
+                break-after: avoid;
+                page-break-after: avoid;
+            }
+
+            /* Hide expand/collapse arrows */
+            .chevron {
+                display: none !important;
+            }
+
+            /* Avoid splitting individual job entries where possible */
+            .job {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+
+            /* Keep links readable and avoid printing dark backgrounds */
+            a {
+                color: #000000 !important;
+                text-decoration: underline;
+            }
+
+            h1, h2, h3, h4, h5 {
+                color: #000000 !important;
+                break-after: avoid;
+                page-break-after: avoid;
+            }
+
+            /* Preserve readable text and borders in the printout */
+            * {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            /* Keep section headings and content in consistent columns */
+            .section {
+                display: grid !important;
+                grid-template-columns: 100% minmax(0, 1fr);
+                column-gap: 10px;
+                align-items: start;
+            }
+            
+            .infosection {
+                grid-template-columns: 30% minmax(0, 1fr) !important;
+            }
+
+            /* Override the widths used by the screen layout */
+            .sectionheader {
+                float: none !important;
+                width: auto !important;
+            }
+
+            .sectiondata {
+                width: auto !important;
+                min-width: 0;
+                margin-left: 0% !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -196,30 +340,29 @@
         <a href="javascript:toggleLanguage()">Idioma | Language</a>
     </div>
     <div class="container">
-        <br>
         <h1>Fernando R. Bordas D&iacute;az</h1><br><hr><br>
         <div class="cvlanguage active">
             <div class="languageselector">
-                <a href="fernando_bordas_en_cv.pdf">Download printable PDF</a>
+                <a href="javascript:window.print()">Print this document</a>
             </div>
-            <h3>Personal &amp; Contact Information</h3><br>
-            <section class="section">
+            <h3>PERSONAL &amp; CONTACT INFORMATION</h3><br>
+            <section class="section infosection">
                 <div class="sectionheader">Birth Date:</div>
                 <div class="sectiondata">September 18th, 1984</div>
             </section>
-            <section class="section">
+            <section class="section infosection">
                 <div class="sectionheader">National ID:</div>
                 <div class="sectiondata">001-1703063-5</div>
             </section>
-            <section class="section">
+            <section class="section infosection">
                 <div class="sectionheader">Phone:</div>
                 <div class="sectiondata">809.968.3995</div>
             </section>
-            <section class="section">
+            <section class="section infosection">
                 <div class="sectionheader">Email:</div>
-                <div class="sectiondata"><a href="mailto:fbordas@gmail.com">fbordas@gmail.com</a></div>
+                <div class="sectiondata"><a class="screen" href="mailto:fbordas@gmail.com">fbordas@gmail.com</a><span class="print">fbordas@gmail.com</span></div>
             </section>
-            <section class="section">
+            <section class="section infosection">
                 <div class="sectionheader">Current Address:</div>
                 <div class="sectiondata">Mar&iacute;a Montessori 5, Res. Alba, Las Praderas</div>
             </section>
@@ -231,7 +374,7 @@
                     with particular focus on backend code engineering as well as functional and exploratory testing across web,
                     desktop, and API platforms. Adept at breaking down complex systems, identifying edge cases, and collaborating
                     closely with development and QA teams. Strong academic and professional background in software development
-                    with active GitHub projects, seeking to transition into a hybrid QA/Dev role or a fully dedicated development role.
+                    with active Github projects, currently working as a Software Developer II at JCE.
                 </div>
             </section>
             <br><hr><br>
@@ -249,14 +392,14 @@
             <section class="section">
                 <div class="sectiondata">
                     <ul>
-                        <li><b>Testing:</b> Manual & exploratory testing, regression, functional, negative, edge cases,
-                            RESTful API validation, requirements analysis.</li>
-                        <li><b>Tools:</b> Jira, Confluence, Jira AIO, Azure Test Plans, HP Quality Center, Postman, Swagger.</li>
-                        <li><b>Databases:</b> Oracle SQL, MySQL, MSSQL, MongoDB (basic).</li>
                         <li><b>Development:</b> VB.Net, C#, MonoGame (basic), Javascript (jQuery, basic Node.js), Github, Github
                             Desktop, Visual Studio, VS Code, HTML, CSS3, PHP (basic), Java 8 (basic).</li>
+                        <li><b>Databases:</b> Oracle SQL, MySQL, MSSQL, MongoDB (basic).</li>
+                        <li><b>Tools:</b> Jira, Confluence, Jira AIO, Azure Test Plans, HP Quality Center, Postman, Swagger.</li>
                         <li><b>Collaboration:</b> Agile/Scrum environments, defect triage, dev-QA communication, cross-functional
                             coordination.</li>
+                        <li><b>Testing:</b> Manual & exploratory testing, regression, functional, negative, edge cases,
+                            RESTful API validation, requirements analysis.</li>
                     </ul>
                 </div>
             </section>
@@ -264,6 +407,23 @@
             <section class="section sectionheader"><h4>Most Recent Work Experience:</h4></section>
             <section class="section sectiondata">
                 <div class="sectiondata">
+                    <section class="job">
+                        <button class="job-header">
+                            <h5>Junta Central Electoral - Developer II (current)</h5>
+                            <span class="chevron">▼</span>
+                        </button>
+                        <div class="job-body">
+                            <div class="job-content">
+                                <ul>
+                                    <li>In-house design, development and maintaining of internal API architecture for travel requests
+                                        management system.</li>
+                                    <li>Designed unit tests for developed software.</li>
+                                    <li>Worked collaboratively with multiple other developers, project managers, process analysts and
+                                        functional analysts to fully test developed software E2E before release.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
                     <section class="job">
                         <button class="job-header">
                             <h5>Neural Software Solutions - Senior QA Engineer / Junior Software Developer</h5>
@@ -325,13 +485,29 @@
                         </button>
                         <div class="job-body">
                             <div class="job-content">
-                                An application developed for Banco BHD to generate files with large volumes of data to
+                                An application developed for BHD Bank to generate files with large volumes of data to
                                 stress test file upload functionality in their enterprise banking platform. The utility
                                 allowed users to specify the number of records to generate, and had an internal database
                                 originally populated with real data from the QA environment to ensure realistic testing
                                 scenarios. The project was later sanitized and published on GitHub as an archived repository.
-                                <br><br><a target="_blank" href="https://github.com/fbordas/BHD-ArchivosCargaIBE">View
-                                repository on Github</a>
+                                <br><br><a class="screen" target="_blank" href="https://github.com/fbordas/BHD-ArchivosCargaIBE">View
+                                repository on Github</a> <span class="print">Github repository: https://github.com/fbordas/BHD-ArchivosCargaIBE</span>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="job">
+                        <button class="job-header">
+                            <h5>Steam Library Data Exporter</h5>
+                            <span class="chevron">▼</span>
+                        </button>
+                        <div class="job-body">
+                            <div class="job-content">
+                                A tiny console application to extract a JSON file containing select data from a Steam account.
+                                Requires a freely obtainable API key and the Steam64 ID of the account to scrape. Can be utilized
+                                to export a snapshot of a library, feed it into other programs/apps or AIs/LLMs for analysis
+                                purposes, or for sharing with friends.
+                                <br><br><a class="screen" target="_blank" href="https://github.com/TohnoCoding/SteamLibraryDataExporter">View
+                                repository on Github</a> <span class="print">Github repository: https://github.com/TohnoCoding/SteamLibraryDataExporter</span>
                             </div>
                         </div>
                     </section>
@@ -351,8 +527,8 @@
                                 the engine continues to be developed, but the current version already includes a significant portion
                                 of the engine's core systems, such as the entity-component system, the rendering pipeline, and the
                                 input handling system.
-                                <br><br><a target="_blank" href="https://github.com/fbordas/ShowcasingKernel2D">View
-                                repository on Github</a>
+                                <br><br><a class="screen" target="_blank" href="https://github.com/fbordas/ShowcasingKernel2D">View
+                                repository on Github</a> <span class="print">Github repository: https://github.com/fbordas/ShowcasingKernel2D</span>
                             </div>
                         </div>
                     </section>
@@ -366,8 +542,8 @@
                                 A tiny utility library developed in C# to parse sprite imagesheets and generate XML and JSON files
                                 with the locations and dimensions of each individual sprite in the image. This was developed to assist
                                 with the development and rapid prototyping of Kernel2D.
-                                <br><br><a target="_blank" href="https://github.com/TohnoCoding/SpriteImageParser">View
-                                repository on Github</a>
+                                <br><br><a class="screen" target="_blank" href="https://github.com/TohnoCoding/SpriteImageParser">View
+                                repository on Github</a> <span class="print">Github repository: https://github.com/TohnoCoding/SpriteImageParser</span>
                             </div>
                         </div>
                     </section>
@@ -385,8 +561,27 @@
                                 project is built entirely in HTML and JS with no backend, and uses Github Pages for hosting. Data is
                                 saved and stored locally in the user's browser via LocalStorage, and users can import and export their
                                 data via JSON files to share with other users or to keep backups.
-                                <br><br><a target="_blank" href="https://tohnocoding.github.io/fgochecklist">View live app</a> |
-                                <a target="_blank" href="https://github.com/TohnoCoding/fgochecklist">View repository on Github</a>
+                                <br><br><a class="screen" target="_blank" href="https://tohnocoding.github.io/fgochecklist">View live app</a>
+                                <span class="print">Live app: https://tohnocoding.github.io/fgochecklist</span> |
+                                <a class="screen" target="_blank" href="https://github.com/TohnoCoding/fgochecklist">View repository on Github</a> 
+                                <span class="print">Github repository: https://github.com/TohnoCoding/fgochecklist</span>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="job">
+                        <button class="job-header">
+                            <h5>FGO Checklist URL shortener</h5>
+                            <span class="chevron">▼</span>
+                        </button>
+                        <div class="job-body">
+                            <div class="job-content">
+                                A fully serverless soution to integrate with FGO Checklist for URL shortening. Free URL
+                                shortening API providers keep going offline, so I decided to build my own using Cloudflare
+                                workers and infrastructure. Built with extensibility in mind to be used as a full-fledged
+                                general-purpose URL shortener if desired, but some development experience will be required
+                                to account for a number of service limitations.
+                                <br><br><a class="screen" target="_blank" href="https://github.com/TohnoCoding/fgo-shortener">View
+                                repository on Github</a> <span class="print">Github repository: https://github.com/TohnoCoding/fgo-shortener</span>
                             </div>
                         </div>
                     </section>
@@ -401,19 +596,21 @@
                                 to easily view and keep track of upcoming banners in the game for players of the Global server. The project
                                 is built in HTML and JS with no backend, and uses Github Pages for hosting. The application displays all
                                 upcoming banners based on a public, community-maintained spreadsheet that tracks Japanese banner information.
-                                <br><br><a target="_blank" href="https://tohnocoding.github.io/fgobanners">View live app</a> |
-                                <a target="_blank" href="https://github.com/TohnoCoding/fgobanners">View repository on Github</a>
+                                <br><br><a class="screen" target="_blank" href="https://tohnocoding.github.io/fgobanners">View live app</a> 
+                                <span class="print">Live app: https://tohnocoding.github.io/fgobanners</span> |
+                                <a target="_blank" href="https://github.com/TohnoCoding/fgobanners">View repository on Github</a> <span
+                                class="print">Github repository: https://github.com/TohnoCoding/fgobanners</span>
                         </div>
                     </section>
                 </div>
             </section>
             <br><hr><br>
-            <section class="section sectionheader"><h4>Education and Academic Formation</h4></section>
+            <section class="section sectionheader"><h4>Education &amp; Academic Formation</h4></section>
             <section class="section sectiondata">
                 <div class="sectiondata">
                     <ul>
                         <li><b>Systems Engineering, specialization in Software Development</b> - PUCMM</li>
-                        <li><b>Bachelors</b> - Instituto San Juan Bautista</li>
+                        <li><b>Bachelors</b> - Instituto San Juan Bautista de la Salle</li>
                         <li><b>English Language</b> - The Boston Institute</li>
                         <li><b>Japanese Language</b> - Nichido Learn Japanese</li>
                     </ul>
@@ -429,26 +626,26 @@
         </div>
         <div class="cvlanguage">
             <div class="languageselector">
-                <a href="fernando_bordas_sp_cv.pdf">Descargar PDF para impresi&oacute;n</a>
+                <a href="javascript:window.print()">Imprimir este documento</a>
             </div>
-            <h3>Informaci&oacuten Personal y Contactos</h3><br>
-            <section class="section">
+            <h3>INFORMACI&Oacute;N PERSONAL Y CONTACTOS</h3><br>
+            <section class="section infosection">
                 <div class="sectionheader">Fecha de Nacimiento:</div>
                 <div class="sectiondata">18 de Septiembre, 1984</div>
             </section>
-            <section class="section">
+            <section class="section infosection">
                 <div class="sectionheader">C&eacute;dula de Identidad:</div>
                 <div class="sectiondata">001-1703063-5</div>
             </section>
-            <section class="section">
+            <section class="section infosection">
                 <div class="sectionheader">Tel&eacute;fono:</div>
                 <div class="sectiondata">809.968.3995</div>
             </section>
-            <section class="section">
+            <section class="section infosection">
                 <div class="sectionheader">Email:</div>
                 <div class="sectiondata"><a href="mailto:fbordas@gmail.com">fbordas@gmail.com</a></div>
             </section>
-            <section class="section">
+            <section class="section infosection">
                 <div class="sectionheader">Domicilio Actual:</div>
                 <div class="sectiondata">Mar&iacute;a Montessori 5, Res. Alba, Las Praderas</div>
             </section>
@@ -461,8 +658,8 @@
                     backend y pruebas funcionales y exploratorias en plataformas de escritorio, web y API. Amplia experiencia
                     analizando y desglosando sistemas complejos, identificando casos extremos y situaciones poco comunes, y
                     colaborando de forma cercana con equipos de desarrollo y QA. S&oacute;lida formación acad&eacute;mica y
-                    profesional en desarrollo de software con proyectos activos en GitHub, en busca de hacer transici&oacute;n 
-                    a un rol h&iacute;brido de QA/desarrollo, o a una posici&oacute;n exclusivamente como desarrollador.
+                    profesional en desarrollo de software con proyectos activos en GitHub, actualmente fungiendo como Desarrollador
+                    de Software II en la JCE.
                 </div>
             </section>
             <br><hr><br>
@@ -480,14 +677,14 @@
             <section class="section">
                 <div class="sectiondata">
                     <ul>
-                        <li><b>Testing:</b> Pruebas manuales y exploratorias, regresión, pruebas funcionales, pruebas negativas,
-                            casos extremos, validación de RESTful APIs, análisis de requerimientos.</li>
-                        <li><b>Herramientas:</b> Jira, Confluence, Jira AIO, Azure Test Plans, HP Quality Center, Postman, Swagger.</li>
-                        <li><b>Bases de datos:</b> Oracle SQL, MySQL, MSSQL, MongoDB (B&aacute;sico).</li>
                         <li><b>Desarrollo:</b> VB.Net, C#, MonoGame (b&aacute;sico), Javascript (jQuery, Node.js b&aacute;sico),
                             Github, Github Desktop, Visual Studio, VS Code, HTML, CSS3, PHP (b&aacute;sico), Java 8 (b&aacute;sico).</li>
+                        <li><b>Bases de datos:</b> Oracle SQL, MySQL, MSSQL, MongoDB (B&aacute;sico).</li>
+                        <li><b>Herramientas:</b> Jira, Confluence, Jira AIO, Azure Test Plans, HP Quality Center, Postman, Swagger.</li>
                         <li><b>Colaboraci&oacute;n:</b> Ambientes ágiles/Scrum, triage de defectos, comunicación efectiva y productiva
                             entre QA y desarrollo, coordinación interfuncional.</li>
+                        <li><b>Testing:</b> Pruebas manuales y exploratorias, regresión, pruebas funcionales, pruebas negativas,
+                            casos extremos, validación de RESTful APIs, análisis de requerimientos.</li>
                     </ul>
                 </div>
             </section>
@@ -495,6 +692,24 @@
             <section class="section sectionheader"><h4>Experiencia Laboral M&aacute;s Reciente:</h4></section>
             <section class="section sectiondata">
                 <div class="sectiondata">
+                    <section class="job">
+                        <button class="job-header">
+                            <h5>Junta Central Electoral - Desarrollador II (actual)</h5>
+                            <span class="chevron">▼</span>
+                        </button>
+                        <div class="job-body">
+                            <div class="job-content">
+                                <ul>
+                                    <li>Dise&ntilde;o interno, desarrollo y mantenimiento de arquitectura de API interna para sistema
+                                        de gesti&oacute;n de vi&aacute;ticos.</li>
+                                    <li>Dise&ntilde;o y desarrollo de pruebas unitarias para software desarrollado.</li>
+                                    <li>Trabajo colaborativo con m&uacute;ltiples otros desarrolladores, <i>project managers</i>,
+                                        y analistas de procesos y funcionales para ejecuci&oacute;n de pruebas E2E previo al
+                                        lanzamiento oficial del software desarrollado.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
                     <section class="job">
                         <button class="job-header">
                             <h5>Neural Software Solutions - Ingeniero de QA <i>Senior</i> / Desarrollador <i>Junior</i></h5>
@@ -567,14 +782,34 @@
                                 cantidad de registros a generar, y contaba con una base de datos interna originalmente populada
                                 con datos reales del ambiente de QA para garantizar escenarios de prueba realistas. El proyecto
                                 fue posteriormente sanitizado y publicado en GitHub como un repositorio archivado.
-                                <br><br><a target="_blank" href="https://github.com/fbordas/BHD-ArchivosCargaIBE">Ver
-                                repositorio en Github</a>
+                                <br><br><a class="screen" target="_blank" href="https://github.com/fbordas/BHD-ArchivosCargaIBE">Ver
+                                repositorio en Github</a> <span class="print">Repositorio de Github:
+                                https://github.com/fbordas/BHD-ArchivosCargaIBE</span>
                             </div>
                         </div>
                     </section>
                     <section class="job">
                         <button class="job-header">
-                            <h5>Showcase of Kernel2D Custom Game Development Microkernel</h5>
+                            <h5>Exportador de datos de biblioteca de Steam</h5>
+                            <span class="chevron">▼</span>
+                        </button>
+                        <div class="job-body">
+                            <div class="job-content">
+                                Una microscópica aplicación de consola para extraer un archivo JSON que contiene data selecta de una
+                                cuenta de Steam. Requiere una llave de API obtenible gratuitamente y el identificador Steam64 de la
+                                cuenta de la cual se desea extraer informaci&oacute;n. Puede ser utilizado para exportar una captura
+                                de datos de la cuenta en el momento de la extracci&oacute;n, para compartir con amistades o contactos,
+                                para alimentar otras aplicaciones, o incluso para alimentar inteligencias artificiales/LLMs para
+                                an&aacute;lisis de la data extra&iacute;da.
+                                <br><br><a class="screen" target="_blank" href="https://github.com/TohnoCoding/SteamLibraryDataExporter">Ver
+                                repositorio en Github</a> <span class="print">Repositorio de Github:
+                                https://github.com/TohnoCoding/SteamLibraryDataExporter</span>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="job">
+                        <button class="job-header">
+                            <h5>Demostraci&oacute;n de microkernel de desarrollo de juegos Kernel2D</h5>
                             <span class="chevron">▼</span>
                         </button>
                         <div class="job-body">
@@ -589,8 +824,9 @@
                                 medida que el motor contin&uacute;e desarroll&aacute;ndose, pero la versi&oacute;n actual ya incluye
                                 una porci&oacute;n significativa de los sistemas centrales del motor, como el sistema de
                                 entidad-componente, la canalizaci&oacute;n de renderizado y el sistema de manejo de entradas.
-                                <br><br><a target="_blank" href="https://github.com/fbordas/ShowcasingKernel2D">Ver
-                                repositorio en Github</a>
+                                <br><br><a class="screen" target="_blank" href="https://github.com/fbordas/ShowcasingKernel2D">Ver
+                                repositorio en Github</a> <span class="print">Repositorio de Github:
+                                https://github.com/fbordas/ShowcasingKernel2D</span>
                             </div>
                         </div>
                     </section>
@@ -600,12 +836,13 @@
                             <span class="chevron">▼</span>
                         </button>
                         <div class="job-body">
-                            <div class="job-contents">
+                            <div class="job-content">
                                 Un utilitario peque&ntilde;o desarrollado en C# para analizar hojas de sprites y generar archivos XML y JSON
                                 con las ubicaciones y dimensiones de cada sprite individual en la imagen. Esto fue desarrollado para
                                 asistir con el desarrollo y prototipado r&aacute;pido de Kernel2D.
-                                <br><br><a target="_blank" href="https://github.com/TohnoCoding/SpriteImageParser">Ver
-                                repositorio en Github</a>
+                                <br><br><a class="screen" target="_blank" href="https://github.com/TohnoCoding/SpriteImageParser">Ver
+                                repositorio en Github</a> <span class="print">Repositorio de Github:
+                                https://github.com/TohnoCoding/SpriteImageParser</span>
                             </div>
                         </div>
                     </section>
@@ -626,8 +863,31 @@
                                 y almacenan localmente en el navegador del usuario a trav&eacute;s de LocalStorage, y los usuarios
                                 pueden importar y exportar sus datos a trav&eacute;s de archivos JSON para compartir con otros
                                 usuarios o para mantener copias de seguridad.
-                                <br><br><a target="_blank" href="https://tohnocoding.github.io/fgochecklist">Ver aplicaci&oacute;n</a> |
-                                <a target="_blank" href="https://github.com/TohnoCoding/fgochecklist">Ver repositorio en Github</a>
+                                <br><br><a class="screen" target="_blank" href="https://tohnocoding.github.io/fgochecklist">Ver
+                                aplicaci&oacute;n</a> <span class="print">Aplicaci&oacute;n: https://tohnocoding.github.io/fgochecklist</span> |
+                                <a class="screen" target="_blank" href="https://github.com/TohnoCoding/fgochecklist">Ver repositorio en Github</a>
+                                <span class="print">Repositorio de Github: https://github.com/TohnoCoding/fgochecklist</span>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="job">
+                        <button class="job-header">
+                            <h5>Acortador de URLs para FGO Checklist</h5>
+                            <span class="chevron">▼</span>
+                        </button>
+                        <div class="job-body">
+                            <div class="job-content">
+                                Una aplicación que funciona sin servidor para integrarse con FGO Checklist para acortar
+                                URLs. Los servicios acortadores de URLs con APIs p&uacute;blicamente disponibles cada
+                                d&iacute;a son m&aacute;s escasos y poco confiables, por lo que decid&iacute; crear mi
+                                propia soluci&oacute;n utilizando la infraestructura de Cloudflare y sus <i>workers</i>.
+                                Creada con extensibilidad en mente para ser utilizada como un acortador de URLs general
+                                multi-prop&oacute;sito si as&iacute; se deseara, pero para esto se deber&aacute; tener
+                                experiencia en desarrollo de software para compensar una serie de limitaciones
+                                intencionales de la implementaci&oacute;n actual.
+                                <br><br><a class="screen" target="_blank" href="https://github.com/TohnoCoding/fgo-shortener">Ver
+                                repositorio en Github</a> <span class="print">Repositorio de Github: 
+                                https://github.com/TohnoCoding/fgo-shortener</span>
                             </div>
                         </div>
                     </section>
@@ -644,8 +904,10 @@
                                 y utiliza Github Pages para hosting. La aplicaci&oacute;n muestra todos los banners pr&oacute;ximos basados
                                 en una hoja de c&aacute;lculo p&uacute;blica mantenida por la comunidad que rastrea la informaci&oacute;n
                                 de los banners japoneses.
-                                <br><br><a target="_blank" href="https://tohnocoding.github.io/fgobanners">Ver aplicaci&oacute;n</a> |
-                                <a target="_blank" href="https://github.com/TohnoCoding/fgobanners">Ver repositorio en Github</a>
+                                <br><br><a class="screen" target="_blank" href="https://tohnocoding.github.io/fgobanners">Ver
+                                aplicaci&oacute;n</a> <span class="print">Aplicaci&oacute;n: https://tohnocoding.github.io/fgobanners</span> |
+                                <a class="screen" target="_blank" href="https://github.com/TohnoCoding/fgobanners">Ver repositorio en Github</a>
+                                <span class="print">Repositorio de Github: https://github.com/TohnoCoding/fgobanners</span>
                         </div>
                     </section>
                 </div>
@@ -656,7 +918,7 @@
                 <div class="sectiondata">
                     <ul>
                         <li><b>Ingenier&iacute;a de Sistemas, Concentraci&oacute;n en Desarrollo de Software</b> - PUCMM</li>
-                        <li><b>Bachiller</b> - Instituto San Juan Bautista</li>
+                        <li><b>Bachiller</b> - Instituto San Juan Bautista de la Salle</li>
                         <li><b>Idioma Ingl&eacute;s</b> - The Boston Institute</li>
                         <li><b>Idioma Japon&eacute;s</b> - Nichido Aprende Japon&eacute;s</li>
                     </ul>
